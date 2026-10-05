@@ -1,4 +1,4 @@
-# Feature reference — v0.7.24
+# Feature reference — v0.7.25
 
 [Return to README](../README.md) · [User guide](USER_GUIDE.md)
 
@@ -12,7 +12,7 @@
 | Sidebar | Selected-only expanded cards, editable names, clip-coloured selections and field focus, colour dropper, score meters, score sorting, colour filtering/sorting, timeline-selection reveal |
 | Timeline | Audio waveform, visual activity, scene markers, HH:MM:SS.mmm ruler and minor notches, up to 100× zoom, wheel scrolling, configurable modified-wheel zoom, adjustable height |
 | Timeline labels | Selected-only animated full-name flags, 3px separation, notches for other named clips, clip-specific colour overrides |
-| Trimming | Full-height edge handles, live time readout, playhead snapping with Alt bypass, numeric IN/OUT fields, set boundaries at playhead, one-second extensions |
+| Trimming | Full-height edge handles, floating live time readout without vertical layout shifts, playhead snapping with Alt bypass, numeric IN/OUT fields, set boundaries at playhead, one-second extensions |
 | Clip management | Manual clips, chronological joins including gaps, undo joins, removal/restoration, session undo/redo |
 | Preview | Selected clip/full source modes, loop, frame stepping, volume, expandable preview, click-to-play/pause, live scrubbing, source/output switch, remembered 25/50/75/100% quality and cached preview proxies |
 | Framing | Live crop preview, Original source / 16:9 / 9:16 / 1:1 / 21:9 / 32:9 / 4:3, horizontal and vertical positioning, centre crop |
@@ -32,7 +32,7 @@
 - Manual edits may overlap. Generated suggestions avoid existing preserved ranges.
 - Review context changes playback only, not export boundaries.
 - Source footage must remain available for saved projects.
-- Native Windows playback and release behaviour should be checked on the target system.
+- Playback compatibility depends on Windows, graphics drivers, and the source codecs.
 
 ## Preview cache and processing
 

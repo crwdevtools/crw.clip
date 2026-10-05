@@ -1,4 +1,4 @@
-# User guide — v0.7.24
+# User guide — v0.7.25
 
 <img src="../assets/crwclip-icon.png" alt="crw.clip app icon" width="48" height="48">
 
@@ -47,7 +47,7 @@ The eyedropper opens the colour picker. Right-click it to clear the colour. A ch
 
 ## 4. Trim and navigate
 
-Select a clip, then drag either timeline edge at any point along its height. A precise time readout appears during the drag. Edges snap near the playhead. Hold **Alt** to bypass snapping.
+Select a clip, then drag either timeline edge at any point along its height. A precise time readout floats above the hint area during the drag. It does not change the layout, so the clip highlight stays at the same vertical position while resizing and when you release the mouse. Edges snap near the playhead. Hold **Alt** to bypass snapping.
 
 In **Clip Controls**, enter IN/OUT times in seconds, set boundaries at the playhead, or use **Extend IN / Extend OUT** to add one second before/after the clip. Invalid or zero-length ranges are prevented.
 
