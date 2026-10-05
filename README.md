@@ -1,10 +1,20 @@
 # crw.clip
 
+<p align="center">
+  <img src="assets/crwclip-logo.svg" alt="crw.clip crow logo" width="96" height="96">
+</p>
+
 **Find, review, and export standout moments from your local videos.**
 
 crw.clip is a Windows desktop application for turning long recordings into a shortlist of clips. It combines audio energy, visual activity, and scene-change signals with hands-on reviewing, trimming, and framing tools. Media processing runs locally on your computer.
 
 This repository contains **documentation only**. The application source code, executables, and user videos are not included. This documentation describes version **0.7.10**.
+
+## App preview
+
+![crw.clip v0.7.10 welcome screen with video import and previous projects](assets/screenshots/start-screen.png)
+
+*The welcome screen in the Red theme, with video import, previous projects, and session recovery.*
 
 ## Get started
 

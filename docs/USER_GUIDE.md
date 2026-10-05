@@ -1,5 +1,7 @@
 # User guide
 
+<img src="../assets/crwclip-icon.png" alt="crw.clip app icon" width="48" height="48">
+
 [Return to README](../README.md)
 
 ## 1. Open a recording
@@ -7,6 +9,8 @@
 Launch the portable Windows executable. Drop a local video onto the welcome screen or browse for one. You can also open a saved `.clipproject` file or choose a previous project.
 
 Common import extensions include MP4, MKV, MOV, WEBM, and AVI. Successful preview depends on the codecs inside the file; use H.264 MP4 when possible.
+
+![Welcome screen: import a video or reopen a previous project](../assets/screenshots/start-screen.png)
 
 ## 2. Find moments
 
