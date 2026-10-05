@@ -8,7 +8,7 @@
 
 crw.clip is a Windows desktop application for turning long recordings into a shortlist of clips. It combines local audio energy, visual activity, and scene-change analysis with precise review, trimming, and gameplay/facecam layout tools.
 
-This repository contains **documentation and preview images only** for **v0.7.24**. Application source code, executables, and user videos are not included. Obtain the portable Windows executable from the developer's distribution channel; no Node.js or Python installation is required, and media tools are bundled.
+This repository contains **documentation and preview images only** for **v0.7.24**. Application source code, executables, and user videos are not included. Obtain the portable Windows executable from the developer's distribution channel. No Node.js or Python installation is required, and media tools are bundled.
 
 ## App preview
 
@@ -42,10 +42,10 @@ There is no application download hosted in this repository.
 
 ## Features
 
-- Local audio, visual activity, and scene-change analysis; adjustable sensitivity and up to **200 suggestions**.
+- Local audio, visual activity, and scene-change analysis, adjustable sensitivity and up to **200 suggestions**.
 - Detection controls popout with Analyze, Re-analyze, and **Apply cached signals**.
 - Keep, Reject, Reset, favourites, review filters, and source-order review with surrounding context.
-- Compact moments cards that expand when selected; names, colour tags, score meters, and timeline/sidebar selection linking.
+- Compact moments cards that expand when selected, names, colour tags, score meters, and timeline/sidebar selection linking.
 - Precise trimming, frame stepping, IN/OUT controls, playhead snapping, manual clips, joins, and undo/redo.
 - Source timeline zoom up to **100×**, mouse-wheel scrolling, modified-wheel zoom, adjustable height, and a detailed **HH:MM:SS.mmm** ruler.
 - Animated selected-clip name flags and clip-specific colour styling.
@@ -61,7 +61,7 @@ There is no application download hosted in this repository.
 
 ## Performance in v0.7.24
 
-Lower preview quality prepares smaller local H.264 preview files with frequent keyframes for seeking. Proxies are cached and reused; 100% restores the original. The original remains available during preparation, which pauses during analysis/export. Exports and analysis always use the original video.
+Lower preview quality prepares smaller local H.264 preview files with frequent keyframes for seeking. Proxies are cached and reused. 100% restores the original. The original remains available during preparation, which pauses during analysis/export. Exports and analysis always use the original video.
 
 Paused previews no longer redraw continuously. Blurred backgrounds are reused during styling/placement edits. Timeline pointer updates are coalesced to display frames, unchanged cards and signals skip repeated rendering, and analysis uses fixed-size raw buffers and packed signal blocks.
 
@@ -69,7 +69,7 @@ Paused previews no longer redraw continuously. Blurred backgrounds are reused du
 
 Detection measures signal changes, not the meaning of an event. Loud moments, motion, and scene cuts are suggestions to review, not guaranteed highlights. Scores are ranking indicators, not confidence percentages. Visual analysis samples two small frames per second, so brief activity can be missed.
 
-Framing keyframes are manual, not automatic object tracking. Project files reference source videos rather than embedding them; keep the original available. Preview proxies take time and disk space to prepare. Older proxies are removed toward a 2 GiB budget, with the newest prepared proxy retained even if larger. Compact analysis signals still grow with recording duration.
+Framing keyframes are manual, not automatic object tracking. Project files reference source videos rather than embedding them. Keep the original available. Preview proxies take time and disk space to prepare. Older proxies are removed toward a 2 GiB budget, with the newest prepared proxy retained even if larger. Compact analysis signals still grow with recording duration.
 
 ## Feedback
 
