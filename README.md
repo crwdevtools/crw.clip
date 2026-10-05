@@ -4,58 +4,75 @@
   <img src="assets/crwclip-logo.svg" alt="crw.clip crow logo" width="96" height="96">
 </p>
 
-**Find, review, and export standout moments from your local videos.**
+**Find, review, reframe, and export standout moments from your local videos.**
 
-crw.clip is a Windows desktop application for turning long recordings into a shortlist of clips. It combines audio energy, visual activity, and scene-change signals with hands-on reviewing, trimming, and framing tools. Media processing runs locally on your computer.
+crw.clip is a Windows desktop application for turning long recordings into a shortlist of clips. It combines local audio energy, visual activity, and scene-change analysis with precise review, trimming, and gameplay/facecam layout tools.
 
-This repository contains **documentation only**. The application source code, executables, and user videos are not included. This documentation describes version **0.7.10**.
+This repository contains **documentation and preview images only** for **v0.7.24**. Application source code, executables, and user videos are not included. Obtain the portable Windows executable from the developer's distribution channel; no Node.js or Python installation is required, and media tools are bundled.
 
 ## App preview
 
-![crw.clip v0.7.10 welcome screen with video import and previous projects](assets/screenshots/start-screen.png)
+### Clip review workspace
 
-*The welcome screen in the Red theme, with video import, previous projects, and session recovery.*
+![crw.clip v0.7.24 workspace with colour-tagged clips, output preview, and source timeline](assets/screenshots/workspace-v0.7.24.png)
+
+Review named and colour-tagged moments, trim their boundaries, and frame the output in one workspace.
+
+### Gameplay & facecam layouts
+
+![crw.clip v0.7.24 gameplay and facecam layout editor](assets/screenshots/layout-v0.7.24.png)
+
+Choose source regions, arrange output sections, and adjust framing, styling, keyframes, or saved presets.
+
+### Welcome screen
+
+![crw.clip v0.7.24 welcome screen with video import and session recovery](assets/screenshots/welcome-v0.7.24.png)
+
+Import a recording, reopen a saved project, or resume a recovered session.
 
 ## Get started
 
-1. Obtain the portable Windows executable from the developer's distribution channel and launch it. No Node.js installation is required; media tools are bundled.
-2. Import a recording, open a saved project, or select a previous project on the welcome screen.
-3. Click **Analyze video**. Use **Detection controls** to choose audio + visual, audio only, or visual only analysis.
-4. Select suggestions in **Your moments** or on the **Source timeline**. Review them, adjust their boundaries, and give useful clips names or colours.
-5. Choose **Export selected**, set the output resolution and quality, and choose where to save the MP4.
+1. Launch the portable Windows executable and import a recording or open a project.
+2. Click **Analyze video**, or open **Detection controls** to choose combined, audio-only, or visual-only analysis.
+3. Select suggestions in **Your moments** or on the **Source timeline**. Keep/reject them, trim boundaries, and add names or colours.
+4. Choose an output shape or open **Layout** to arrange gameplay and facecam for the selected clip.
+5. Click **Export selected**, choose resolution and quality, and save an MP4. Optionally include all kept clips.
 
 There is no application download hosted in this repository.
 
 ## Features
 
-- Local audio, visual activity, and scene-change analysis with adjustable sensitivity.
-- Up to **200 suggested clips**, ranked by signal strength.
-- Keep, Reject, Reset, favourites, and review filters.
-- Review mode with two seconds of surrounding context and automatic advancement after Keep or Reject.
-- Manual clips, full-height timeline trim handles, precise IN/OUT controls, frame stepping, and playhead snapping.
-- Undo/redo for clip edits; joining neighbouring clips and undoing joins.
-- Source timeline zoom up to **100×**, mouse-wheel scrolling, Ctrl + wheel zoom, and adjustable height.
-- A detailed **HH:MM:SS.mmm** ruler, scene markers, and visual activity indicators.
-- Named and colour-tagged clips, score sorting, and colour filtering/sorting.
-- Selecting a timeline clip reveals its matching sidebar card.
-- Animated name flags for the selected clip, plus notches identifying other named clips.
-- Live crop preview for **16:9**, **9:16**, and **1:1**, with horizontal and vertical framing controls.
-- **720p, 1080p, and 2160p** MP4 exports, quality presets, and a cancellable export queue.
-- Saved projects, autosave/recovery, and previous-project selection.
-- Editable keyboard shortcuts and four colour themes: green, red, blue, and purple.
+- Local audio, visual activity, and scene-change analysis; adjustable sensitivity and up to **200 suggestions**.
+- Detection controls popout with Analyze, Re-analyze, and **Apply cached signals**.
+- Keep, Reject, Reset, favourites, review filters, and source-order review with surrounding context.
+- Compact moments cards that expand when selected; names, colour tags, score meters, and timeline/sidebar selection linking.
+- Precise trimming, frame stepping, IN/OUT controls, playhead snapping, manual clips, joins, and undo/redo.
+- Source timeline zoom up to **100×**, mouse-wheel scrolling, modified-wheel zoom, adjustable height, and a detailed **HH:MM:SS.mmm** ruler.
+- Animated selected-clip name flags and clip-specific colour styling.
+- Live source/output previews, click-to-play/pause, continuous scrubbing, and remembered **25%, 50%, 75%, or 100%** preview quality.
+- **Original source, 16:9, 9:16, 1:1, 21:9, 32:9, and 4:3** output shapes.
+- Gameplay/facecam layouts with draggable source regions and output boxes, centre snapping, Fit/Fill, linked resizing, aspect-ratio lock, and independent source zoom/pan.
+- Saved layout presets, copy-to-multiple-clips, editor undo/redo, manual framing keyframes, borders, rounded corners, background styling, and safe-area guides.
+- **Original source, 720p, 1080p, and 2160p** MP4 exports, named files, quality presets, and a cancellable export queue.
+- Saved projects, autosave/recovery, recent projects, and a clear-recent-list button.
+- Editable keyboard shortcuts and green, red, blue, and purple themes.
 
 [Full feature reference](docs/FEATURES.md) · [User guide and shortcuts](docs/USER_GUIDE.md)
 
-## Important limits
+## Performance in v0.7.24
 
-Detection measures signal changes, not the meaning of an event. Loud moments, motion, or scene cuts are suggestions to review, not guaranteed highlights. The score is a ranking indicator, not a confidence percentage.
+Lower preview quality prepares smaller local H.264 preview files with frequent keyframes for seeking. Proxies are cached and reused; 100% restores the original. The original remains available during preparation, which pauses during analysis/export. Exports and analysis always use the original video.
 
-Visual analysis samples two small frames per second, so brief activity between samples can be missed. H.264 MP4 is the most reliable preview format. Project files reference source videos; they do not embed them. Keep the original source available when reopening a project.
+Paused previews no longer redraw continuously. Blurred backgrounds are reused during styling/placement edits. Timeline pointer updates are coalesced to display frames, unchanged cards and signals skip repeated rendering, and analysis uses fixed-size raw buffers and packed signal blocks.
 
-The app is still undergoing release testing. Validate an export before relying on it for a final delivery.
+## Scope and limits
+
+Detection measures signal changes, not the meaning of an event. Loud moments, motion, and scene cuts are suggestions to review, not guaranteed highlights. Scores are ranking indicators, not confidence percentages. Visual analysis samples two small frames per second, so brief activity can be missed.
+
+Framing keyframes are manual, not automatic object tracking. Project files reference source videos rather than embedding them; keep the original available. Preview proxies take time and disk space to prepare. Older proxies are removed toward a 2 GiB budget, with the newest prepared proxy retained even if larger. Compact analysis signals still grow with recording duration.
 
 ## Feedback
 
-When reporting an issue, include the app version, Windows version, source format and duration, the steps to reproduce, and what you expected. Screenshots are helpful. Avoid sharing private footage or project files containing personal paths in a public issue.
+When reporting an issue, include the app version, Windows version, source format and duration, steps to reproduce, and expected behaviour. Avoid posting private footage or personal file paths in public issues.
 
 This repository does not grant a licence to the application or publish its source code.
